@@ -1,4 +1,19 @@
 ".source.eztpl":
   "{...|attribute(show)}":
-    prefix: "show"
-    body: "\\{$${1:node}|attribute(show,${2:1})\\}"
+    'prefix': "show"
+    'body': "\\{$${1:node}|attribute(show,${2:1})\\}"
+  '{switch match=...}':
+    'prefix': 'switch'
+    'body': '\\{switch match=$${1:match}\\}\n\t\\{case match="${2}"\\}\n\t\t${3}\n\t\\{/case\\}\n\\{/switch\\}'
+  '{set $foo = \'bar\'}':
+    'prefix': 'set'
+    'body': '\\{set $${1:variable} = ${2:value}\\}'
+  '{def $foo = \'bar\'}':
+    'prefix': 'def'
+    'body': '\\{def $${1:variable} = ${2:value}\\}'
+  '{include uri=""}':
+    'prefix': 'include'
+    'body': '\\{include uri="design:${1:template}.tpl"\\}'
+  '{foreach $array as $item}':
+    'prefix': 'foreach'
+    'body': '\\{foreach $${1:array}" as $${2:item}\\}\n\t${3}\n\\{/foreach\\}'
