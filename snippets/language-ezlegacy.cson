@@ -34,7 +34,7 @@
     'body': '\\{delimiter}$1{/delimiter\\}'
   '{fetch}':
     'prefix': 'fetch'
-    'body': '\\{fetch( \'${1:content}\', \'${2:list}\',\n\thash( \'${3:parent_node_id}\',\'${4:node_id}\' ))\\}'
+    'body': 'fetch( \'${1:content}\', \'${2:list}\',\n\thash( \'${3:parent_node_id}\',\'${4:node_id}\' ))'
   '{if}':
     'prefix': 'if'
     'body': '\\{if ${1:condition}\\}\n\t${0}\n\\{/if\\}'
