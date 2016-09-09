@@ -1,6 +1,6 @@
 {
   "name": "language-ezlegacy",
-  "version": "0.2.0",
+  "version": "0.3.0",
   "description": "eZ Publish Legacy Atom Syntax",
   "keywords": [
     "eZ Legacy, language-ezlegacy, eztpl"
