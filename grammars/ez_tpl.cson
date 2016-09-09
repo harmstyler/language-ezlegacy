@@ -29,8 +29,7 @@
     'contentName': "text.eztpl.basic"
     'patterns': [
       {
-        'match': "\\b(if|switch|case|do *while|while|for|do|section|section-else"+
-            "|section-exclude|section-include|else|elseif|foreach)\\b"
+        'match': "\\b(if|switch|case|do *while|while|for|do|section|section-else|section-exclude|section-include|else|elseif|foreach|delimiter)\\b"
         'name': "keyword.control.eztpl"
       }
       {

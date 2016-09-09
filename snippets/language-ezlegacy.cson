@@ -2,6 +2,9 @@
   "{...|attribute(show)}":
     'prefix': "show"
     'body': "\\{$${1:node}|attribute(show,${2:1})\\}"
+  '{...|dump()}':
+    'prefix': 'dump'
+    'body': '\\{$${1:var_to_dump}|dump(\'${2:show}\',${3:1},\'${4:html}\')\\}'
   '{switch match=...}':
     'prefix': 'switch'
     'body': '\\{switch match=$${1:match}\\}\n\t\\{case match="${2}"\\}\n\t\t${3}\n\t\\{/case\\}\n\\{/switch\\}'
@@ -16,4 +19,25 @@
     'body': '\\{include uri="design:${1:template}.tpl"\\}'
   '{foreach $array as $item}':
     'prefix': 'foreach'
-    'body': '\\{foreach $${1:array}" as $${2:item}\\}\n\t${3}\n\\{/foreach\\}'
+    'body': '\\{foreach $${1:array} as $${2:item}\\}\n\t${3}\n\\{/foreach\\}'
+  '{cache-block}':
+    'prefix': 'cache-block'
+    'body': '\\{cache-block keys=${1:keys} expiry=${2:3600} ${3:ignore_content_expiry} subtree_expiry=${4:<path>}\\}'
+  '{case}':
+    'prefix': 'case'
+    'body': '\\{case match=${1:value}\\}'
+  '{attribute_view_gui}':
+    'prefix': 'attribute_view_gui'
+    'body':'\\{attribute_view_gui attribute=$${1:attribute}${<2></2>}\\}'
+  '{delimiter}':
+    'prefix': 'delimiter'
+    'body': '\\{delimiter}$1{/delimiter\\}'
+  '{fetch}':
+    'prefix': 'fetch'
+    'body': '\\{fetch( \'${1:content}\', \'${2:list}\',\n\thash( \'${3:parent_node_id}\',\'${4:node_id}\' ))\\}'
+  '{if}':
+    'prefix': 'if'
+    'body': '\\{if ${1:condition}\\}\n\t${0}\n\\{/if\\}'
+  '{section}':
+    'prefix': 'section'
+    'body': '\\{section ${1:arguments}}\n\t${0}\n\\{/section}'
