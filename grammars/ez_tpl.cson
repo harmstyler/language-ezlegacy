@@ -1,0 +1,90 @@
+fileTypes: [
+  "tpl"
+  "ezt"
+]
+foldingStartMarker: ".*\\{(section\\s.|let.*|if\\s.*|foreach.+\\}|for.+\\}|while.+\\}|switch.+\\}|case.*\\}|cache-block.*\\}|run-once.*\\}|literal.*\\}|delimiter.*\\}).*"
+foldingStopMarker: ".*\\{\\/(section|let|if|elseif|foreach|for|while|switch|case|cache-block|run-once|literal|delimiter)\\}.*"
+name: "eZ Tpl"
+patterns: [
+  {
+    include: "#ezcode"
+  }
+  {
+    include: "#ezcomment"
+  }
+  {
+    include: "#html"
+  }
+]
+repository:
+  ezcode:
+    begin: "{(?!\\*)"
+    beginCaptures:
+      "0":
+        name: "punctuation.definition.tag.begin.eztpl"
+    end: "}"
+    endCaptures:
+      "0":
+        name: "punctuation.definition.tag.end.eztpl"
+    contentName: "text.eztpl.basic"
+    patterns: [
+      {
+        match: "\\b(if|switch|case|do *while|while|for|do|section|section-else|section-exclude|section-include|else|elseif|foreach)\\b"
+        name: "keyword.control.eztpl"
+      }
+      {
+        include: "#variable"
+      }
+      {
+        begin: "\""
+        end: "\""
+        name: "string.quoted.double.eztpl"
+        patterns: [
+          {
+            match: "\\\\(\"|'|\\\\|})"
+            name: "constant.character.escape.eztpl"
+          }
+          {
+            match: "}"
+            name: "invalid.illegal.stringchar.eztpl"
+          }
+        ]
+      }
+      {
+        begin: "'"
+        end: "'"
+        name: "string.quoted.single.eztpl"
+        patterns: [
+          {
+            match: "\\\\(\"|'|\\\\|})"
+            name: "constant.character.escape.eztpl"
+          }
+          {
+            match: "}"
+            name: "invalid.illegal.stringchar.eztpl"
+          }
+        ]
+      }
+      {
+        match: "\\b(abs|action_icon|and|append-block|append|array_sum|array|attribute_edit_gui|attribute_result_gui|attribute_view_gui|attribute|autolink|begins_with|break|cache-block|ceil|choose|chr|class_attribute_edit_gui|class_attribute_view_gui|class_icon|classgroup_icon|collaboration_icon|collaboration_participation_view|collaboration_simple_message_view|collaboration_view_gui|compare|concat|cond|contains|content_structure_tree|content_version_view_gui|content_view_gui|count_chars|count_words|count|crc32|currentdate|d18n|Data|datetime|debug-accumulator|debug-log|debug-timing-point|debug-trace|dec|def|div|downcase|dump|ends_with|eq|event_edit_gui|explode|extract_left|extract_right|extract|exturl|ezdesign|ezhttp_hasvariable|ezhttp|ezimage|ezini_hasvariable|ezini|ezmodule|ezpackage|ezpreference|ezroot|ezsys|ezurl|false|fetch_alias|fetch|first_set|flag_icon|float|floor|get_class|get_type|gettime|ge|gt|hash|i18n|icon_info|imagefile|image|implode|include|inc|indent|insert|int|is_array|is_boolean|is_class|is_float|is_integer|is_null|is_numeric|is_object|is_set|is_string|is_unset|l10n|language_switcher|ldelim|le|literal|lt|makedate|maketime|max|md5|merge|mimetype_icon|min|module_params|mod|month_overview|mul|ne|nl2br|node_view_gui|not|null|ord|or|pad|prepend|rand|rdelim|related_view_gui|remove|repeat|replace|reverse|roman|rot13|round|run-once|sequence|set-block|set|shop_account_view_gui|shorten|simpletags|simplify|si|sub|sum|texttoimage|tool_bar|topmenu|treemenu|trim|true|undef|unique|upcase|upfirst|upword|wash|wordtoimage|wrap)\\b"
+        name: "support.function.eztpl"
+      }
+      {
+        match: "\\b(default|let|attribute_pdf_gui|content_pdf_gui|pdf)\\b"
+        name: "invalid.deprecated.function.eztpl"
+      }
+      {
+        match: "(?:-|\\b)[0-9]+(?:\\.?[0-9]*)\\b"
+        name: "constant.numeric.eztpl"
+      }
+    ]
+  ezcomment:
+    begin: "{\\*"
+    end: "\\*}"
+    name: "comment.block.eztpl"
+  variable:
+    match: "\\$[\\-_a-zA-Z0-9]+(?:\\.[_0-9a-zA-Z]+)*"
+    name: "variable.eztpl"
+  html:
+    include: "text.html.basic"
+scopeName: "source.eztpl"

@@ -1,0 +1,4 @@
+".source.eztpl":
+  "{...|attribute(show)}":
+    prefix: "show"
+    body: "\\{$${1:node}|attribute(show,${2:1})\\}"
