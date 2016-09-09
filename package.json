@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "description": "eZ Publish Legacy Atom Syntax",
   "keywords": [
-    "eZ Legacy, language-ezlegacy"
+    "eZ Legacy, language-ezlegacy, eztpl"
   ],
   "repository": "https://github.com/harmstyler/language-ezlegacy",
   "license": "MIT",
