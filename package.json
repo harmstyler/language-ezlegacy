@@ -1,10 +1,11 @@
 {
   "name": "language-ezlegacy",
-  "version": "0.0.0",
-  "description": "A short description of your package",
+  "version": "0.1.0",
+  "description": "eZ Publish Legacy Atom Syntax",
   "keywords": [
+    "eZ Legacy, language-ezlegacy"
   ],
-  "repository": "https://github.com/atom/language-ezlegacy",
+  "repository": "https://github.com/harmstyler/language-ezlegacy",
   "license": "MIT",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
