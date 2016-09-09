@@ -1,3 +1,9 @@
-# language-ezlegacy package
+eZ Publish Legacy Atom Syntax
+=====
 
-A short description of your package.
+This package offers:
+
+* Syntax highlighting for .tpl (eZ Publish Template Language) and .ini (eZ INI) files
+* Snippets
+
+This is a port of the [sirreal/eZ-Publish-Syntax package for Sublime](https://github.com/sirreal/eZ-Publish-Syntax/)
