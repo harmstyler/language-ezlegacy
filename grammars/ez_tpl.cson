@@ -1,10 +1,11 @@
+'scopeName': "source.eztpl"
+'name': "eZ Tpl"
 'fileTypes': [
   "tpl"
   "ezt"
 ]
 'foldingStartMarker': ".*\\{(section\\s.|let.*|if\\s.*|foreach.+\\}|for.+\\}|while.+\\}|switch.+\\}|case.*\\}|cache-block.*\\}|run-once.*\\}|literal.*\\}|delimiter.*\\}).*"
 'foldingStopMarker': ".*\\{\\/(section|let|if|elseif|foreach|for|while|switch|case|cache-block|run-once|literal|delimiter)\\}.*"
-'name': "eZ Tpl"
 'patterns': [
   {
     'include': "#ezcode"
@@ -85,4 +86,3 @@
   'variable':
     'match': "\\$[\\-_a-zA-Z0-9]+(?:\\.[_0-9a-zA-Z]+)*"
     'name': "variable.eztpl"
-'scopeName': "source.eztpl"

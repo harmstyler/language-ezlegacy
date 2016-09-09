@@ -3,10 +3,14 @@
   "version": "0.3.1",
   "description": "eZ Publish Legacy Atom Syntax",
   "keywords": [
-    "eZ Legacy, language-ezlegacy, eztpl"
+    "eZ Legacy",
+    "language-ezlegacy",
+    "eztpl",
+    "eZ Publish"
   ],
   "repository": "https://github.com/harmstyler/language-ezlegacy",
   "license": "MIT",
+  "readmeFilename": "README.md",
   "engines": {
     "atom": ">=1.0.0 <2.0.0"
   },
